@@ -1,0 +1,3 @@
+_target_: _estimators.ModisteKNNRewardEst
+n_neighbors: 25
+init_strat: mean

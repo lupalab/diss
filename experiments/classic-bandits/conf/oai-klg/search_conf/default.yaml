@@ -1,0 +1,9 @@
+search_every_n_iter: 100
+n_tmpls_targ: 30
+n_cands_init: 5000
+n_cands_mutate: 2500
+n_cands_targ: 5000
+min_features: 1
+max_features: null
+n_rounds: 10
+use_feature_importance_sampling: true

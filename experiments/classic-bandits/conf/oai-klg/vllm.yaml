@@ -1,0 +1,28 @@
+hydra:
+  job:
+    name: oai-klg-vllm
+  sweep:
+    dir: outputs/${hydra.job.name}/${now:%Y%m%d}_${now:%H%M%S}
+    subdir: ${hydra.job.num}
+  launcher:
+    n_jobs: 1
+
+make_envs_func:
+  _target_: envs.colleague.oai.klg.make_vllm_diss_components
+  n_neighs: 0
+  server_url: http://192.168.1.130:8000/v1
+  api_key: "not-needed"
+# reward_est: TODO
+# strat: TODO
+train_conf:
+  init_capital: 250
+  n_iter: 4001
+  eval_bsz: 1000
+  eval_every_n_iter: 250
+  save_ckpt_every_n_iter: 1000
+  init_capital_rseed: null
+  to_eval_on_train: false
+  to_log_additional_metrics: false
+plf:
+  _target_: lightning.Fabric
+  accelerator: cpu

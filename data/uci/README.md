@@ -1,0 +1,1 @@
+Use the python scripts in `scripts/make-dataset` to download and prepare the datasets.

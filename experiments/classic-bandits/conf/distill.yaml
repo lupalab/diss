@@ -1,0 +1,21 @@
+hydra:
+  # job:
+  #   name: TODO
+  sweep:
+    dir: outputs/${hydra.job.name}/${now:%Y%m%d}_${now:%H%M%S}
+    subdir: ${hydra.job.num}
+  launcher:
+    n_jobs: 8
+
+# train_exp: TODO
+# train_run: TODO
+#   exp_p: TODO
+#   run_id: TODO
+n_clusters: 30
+dtc:
+  _target_: sklearn.tree.DecisionTreeClassifier
+  max_depth: 5
+  splitter: "best"
+  criterion: "log_loss"
+  random_state: 279
+  ccp_alpha: 0.03

@@ -1,0 +1,2 @@
+_target_: disslib.strategies.RandomOptStrat
+n_queries: 1

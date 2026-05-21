@@ -1,0 +1,18 @@
+hydra:
+  job:
+    name: cdc-vllm
+  sweep:
+    dir: outputs/${hydra.job.name}/${now:%Y%m%d}_${now:%H%M%S}
+    subdir: ${hydra.job.num}
+  launcher:
+    n_jobs: 1
+
+make_envs_func:
+  _target_: envs.uci_health.cdc_diabetes.make_vllm_diss_components
+  n_neighs: 0
+  server_url: http://192.168.1.130:8000/v1
+  api_key: "not-needed"
+eval_bsz: 1000
+plf:
+  _target_: lightning.Fabric
+  accelerator: cpu

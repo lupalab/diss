@@ -1,0 +1,3 @@
+_target_: _strategies.ModisteOptStrat
+n_queries: 1
+epsilon: 0.1

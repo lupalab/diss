@@ -1,0 +1,4 @@
+_target_: disslib.strategies.MTSPM
+n_queries: 1
+n_ctxs: 500
+ctxs_bsz: 500

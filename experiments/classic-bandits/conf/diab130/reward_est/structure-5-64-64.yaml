@@ -1,0 +1,12 @@
+_target_: disslib.estimators.OneToManyStructureRewardEst
+fraction_training_data_per_split: 1.0
+n_mimic_models: 5
+mimic_xgbc_kwargs:
+  n_estimators: 64
+  random_state: 42
+  n_jobs: 2
+base_xgbc_kwargs:
+  n_estimators: 64
+  random_state: 42
+  n_jobs: 2
+rseed: 42
